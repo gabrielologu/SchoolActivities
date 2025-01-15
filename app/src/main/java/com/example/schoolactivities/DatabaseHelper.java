@@ -7,10 +7,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import androidx.annotation.Nullable;
 
-
-
-// could have definitely made this much more simple, but decided to go for a straight forward approach
-
 public class DatabaseHelper extends SQLiteOpenHelper {
     private static DatabaseHelper instance;
     public static synchronized DatabaseHelper getInstance(Context context) {
@@ -137,8 +133,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         else return false;
     }
 
-    // supposed to be used for the register activity to verify if phone number already exists
-
     public Boolean checkPhone(String phone){
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery("SELECT * FROM " +
@@ -149,8 +143,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             return true;
         else return false;
     }
-
-    // same here but for the student
 
     public Boolean checkPhoneStudent(String phone){
         SQLiteDatabase db = this.getReadableDatabase();

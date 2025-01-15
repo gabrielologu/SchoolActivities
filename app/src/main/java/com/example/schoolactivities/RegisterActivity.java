@@ -27,7 +27,6 @@ public class RegisterActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.register_main);
 
-        // Initialize views
         registerButton = findViewById(R.id.registerButton);
         loginButtonPage = findViewById(R.id.toLoginPageButton);
         firstName = findViewById(R.id.firstNameInput);
@@ -39,10 +38,8 @@ public class RegisterActivity extends AppCompatActivity {
         Student = findViewById(R.id.imStudent);
         Teacher = findViewById(R.id.imTeacher);
 
-        // Initialize the DatabaseHelper
         DB = new DatabaseHelper(this);
 
-        // Set up click listeners
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
